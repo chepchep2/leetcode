@@ -29,7 +29,73 @@ package problems
 // 1 <= s.length <= 104
 // s consists of parentheses only '()[]{}'.
 
-
 func IsValid(s string) bool {
-    return false
+	a := []string{}
+
+	for i := 0; i < len(s); i++ {
+		if s[i] == '(' || s[i] == '{' || s[i] == '[' {
+
+			a = append(a, string(s[i]))
+
+		}
+
+		if s[i] == ')' {
+			if len(a) == 0 {
+				return false
+			}
+			// if a[len(a)-1] == "{" || a[len(a)-1] == "[" {
+			// 	return false
+			// }
+			if a[len(a)-1] == "(" {
+				// return true
+				a = a[:len(a)-1]
+			} else {
+				return false
+			}
+
+			// a = a[:len(a)-1]
+			// return true
+		}
+
+		if s[i] == '}' {
+			if len(a) == 0 {
+				return false
+			}
+
+			// if a[len(a)-1] == "(" || a[len(a)-1] == "{" {
+			// 	return false
+			// }
+			if a[len(a)-1] == "{" {
+				a = a[:len(a)-1]
+			} else {
+				return false
+			}
+
+			// a = a[:len(a)-1]
+			// return true
+		}
+
+		if s[i] == ']' {
+			if len(a) == 0 {
+				return false
+			}
+			// if a[len(a)-1] == "{" || a[len(a)-1] == "(" {
+			// 	return false
+			// }
+			if a[len(a)-1] == "[" {
+				a = a[:len(a)-1]
+			} else {
+				return false
+			}
+
+			// a = a[:len(a)-1]
+			// return true
+		}
+
+	}
+	if len(a) == 0 {
+		return true
+	}
+
+	return false
 }
