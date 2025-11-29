@@ -25,3 +25,15 @@ go.work
 
 # Windsurf settings
 .windsurf
+
+# Java (추가!)
+*.class
+*.iml
+out/
+target/
+*.jar
+*.war
+
+# Python
+__pycache__/
+*.py[cod]
