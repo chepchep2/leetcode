@@ -1,10 +1,11 @@
 package problems_test;
 
 import problems.Problem704;
+import problems.Problem704_re;
 
 public class Problem704Test {
     public static void main(String[] args) {
-        Problem704 sol = new Problem704();
+        Problem704_re sol = new Problem704_re();
 
         int[] nums = {-1,0,3,5,9,12};
         int target = 9;
